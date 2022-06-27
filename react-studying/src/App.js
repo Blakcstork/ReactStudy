@@ -1,51 +1,48 @@
 import {useState, useEffect} from "react";
-import styles from "./App.module.css";
+
+
 
 
 function App() {
 
-  const [counter, setValue] = useState(0);
-
-  const [keyword, setKeyword] = useState("");
-
-  const onClick = () => setValue((prev) => prev + 1);
+  const [toDo, setToDo] = useState("");
+  const [toDos, setToDos] = useState([]);
 
   const onChange = (event) => {
-    setKeyword(event.target.value);
-  };
+    setToDo(event.target.value);
+  }
 
-  const iRunOnlyOnce = () => {
-     console.log("i run only once!");
-  };
-
-  useEffect(iRunOnlyOnce, []);
-
-  useEffect(() => {
-    if(keyword !== "" && keyword.length >= 5){
-      console.log("SEARCH FOR ", keyword);
+  const onSubmit = (event) =>{
+    event.preventDefault();
+    if(toDo === ""){
+      return;
     }
-  }, [keyword]);
 
-  useEffect(() => {
-      console.log("I run when counter active");
-  }, [counter]);
+    setToDo("");
+    setToDos((currentArray) => [toDo, ...currentArray])
+  }
 
-  useEffect(() => {
-    console.log("I run when counter active");
-  }, [counter, keyword]);
+  console.log(toDos)
 
 
-  return (
-    <div>
-      <input
-        value = {keyword}
-        onChange = {onChange} 
+
+
+  return (  
+  <div>
+    <h1>My To Dos {toDos.length}</h1>
+    <form onSubmit={onSubmit}>
+      <input 
+        onChange={onChange} 
+        value = {toDo} 
         type = "text" 
-        placeholder = "Search here..." />
-      <h1 className = {styles.title}>{counter}</h1>
-      <button onClick = {onClick}>Click me!</button>
-    </div>
-  );
+        placeholder = "Write your to do..."
+      />
+      <button>
+        Add To Do
+      </button>
+    </form>
+  </div>
+  )
 }
 
 export default App;
