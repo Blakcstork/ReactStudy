@@ -20,13 +20,13 @@ function Home(){
       getMovies();
     }, []);
   
-    console.log(movies);
   
     return (  
     <div>
       {loading ? <h1>Loading...</h1> : <div>{movies.map((movie) => 
         <Movie
-          key = {movie.id} 
+          key = {movie.id}
+          id = {movie.id} 
           coverImg ={movie.medium_cover_image} 
           title = {movie.title} 
           summary = {movie.summary} 
