@@ -1,0 +1,10 @@
+.titleLink > a {
+    text-align : center;
+    text-decoration-line: none ;
+    font-weight:bold;
+    color: black;
+}
+
+.titleLink > a:hover{
+    color:grey;
+}

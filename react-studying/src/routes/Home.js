@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
-import Movie from "../components/Movie"
+import Movie from "../components/Movie";
+import NavBar from "../components/NavBar";
 
 
 
@@ -23,6 +24,7 @@ function Home(){
   
     return (  
     <div>
+      <NavBar />
       {loading ? <h1>Loading...</h1> : <div>{movies.map((movie) => 
         <Movie
           key = {movie.id}
