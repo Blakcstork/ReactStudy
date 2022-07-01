@@ -4,9 +4,9 @@ import styles from "../css/NavBar.module.css"
 
 
 function Button({text, link}){
-    return <div 
+    return <Link to = {`${link}`}><div 
         className = {styles.btn}
-    ><Link to = {`${link}`}>{text}</Link></div>
+    >{text}</div></Link>
 }
 
 function NavBar(){
@@ -14,8 +14,8 @@ function NavBar(){
         <div>
             <nav className="wrapper">
                 <Button text = "Home" link = {`/ReactStudy`}/>
-                <Button text = "Button2"/>
-                <Button text = "Button3"/>
+                <Button text = "Search Movies"/>
+                <Button text = "Makings"/>
                 <Button text = "MyPage"/>
             </nav>
             <hr />

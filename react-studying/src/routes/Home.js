@@ -1,6 +1,11 @@
 import {useState, useEffect} from "react";
 import Movie from "../components/Movie";
 import NavBar from "../components/NavBar";
+import Header from "../components/Header";
+
+import styles from "../css/Home.module.css";
+
+
 
 
 
@@ -23,9 +28,11 @@ function Home(){
   
   
     return (  
-    <div>
+    <div className = {styles.container}>
+      <Header />
       <NavBar />
-      {loading ? <h1>Loading...</h1> : <div>{movies.map((movie) => 
+      {loading ? <h1>Loading...</h1> : 
+      <div>{movies.map((movie) => 
         <Movie
           key = {movie.id}
           id = {movie.id} 
