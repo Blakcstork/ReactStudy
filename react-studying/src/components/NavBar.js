@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
+import PropTypes from "prop-types";
 import styles from "../css/NavBar.module.css"
 
 
@@ -24,6 +25,12 @@ function NavBar(){
 
 }
 
+
+Button.propTypes = {
+    text : PropTypes.string.isRequired,
+    link : PropTypes.string,
+
+}
 
 
 export default NavBar;
