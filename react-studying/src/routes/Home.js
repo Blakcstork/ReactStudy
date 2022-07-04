@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar";
 import Header from "../components/Header";
 
 import styles from "../css/Home.module.css";
+import "../css/PageGrid.css";
 
 
 
@@ -29,8 +30,12 @@ function Home(){
   
     return (  
     <div className = {styles.container}>
-      <Header />
-      <NavBar />
+      <div className="header">
+        <Header />
+      </div>
+      <div>
+        <NavBar />
+      </div>
       {loading ? <h1>Loading...</h1> : 
       <div>{movies.map((movie) => 
         <Movie

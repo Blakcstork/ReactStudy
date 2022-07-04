@@ -1,12 +1,14 @@
 import githubImage from "../imgs/GLogo2.png";
+import styles from "../css/Header.module.css"
 
 
 function Header(){
     return (
-        <div>
-            <button>
+        <div className = {styles.wrapper}>
+            <div>
+                <h1>THIS IS THE MOVIES!</h1>
                 <img src = {githubImage} alt = "discord Button"/>
-            </button>
+            </div>
         </div>
     )
 }
