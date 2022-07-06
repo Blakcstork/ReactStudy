@@ -1,3 +1,29 @@
 .container{
-    display: gird;
+    display: flex;
+    flex-wrap : wrap;
+    flex-direction : column;
+    align-content : space-around;
+}
+
+
+.header{
+    width : 100%;
+}
+
+
+.navigator{
+    width : 100%;
+
+}
+
+.contents{
+    display : flex;
+    flex-wrap : wrap;
+    width : 100%;
+    margin : 10% 5%;
+}
+
+.contents > div{
+    width : 35%;
+    margin : 20px 30px;
 }

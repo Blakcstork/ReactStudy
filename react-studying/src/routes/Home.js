@@ -30,14 +30,14 @@ function Home(){
   
     return (  
     <div className = {styles.container}>
-      <div className="header">
+      <div className={styles.header}>
         <Header />
       </div>
-      <div>
+      <div className={styles.navigator}>
         <NavBar />
       </div>
       {loading ? <h1>Loading...</h1> : 
-      <div>{movies.map((movie) => 
+      <div className = {styles.contents}>{movies.map((movie) => 
         <Movie
           key = {movie.id}
           id = {movie.id} 
